@@ -1,0 +1,48 @@
+<html>
+
+<head>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	            <video id='v1' class="video" controls>
+                <source src=Getting_Started_With_React.js.mp4 type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            	            <video id='v2' class="video" controls>
+                <source src=Getting_Started_With_React.js.mp4 type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            	            <video id='v3' class="video" controls>
+                <source src=Getting_Started_With_React.js.mp4 type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+
+            <script type="text/javascript">
+            	
+            	$( document ).ready(function() {
+    var videos = document.getElementsByClassName('video');
+    console.log(videos.length);
+    function stopOthers () {
+        var id = this.id, i = 0;
+        for (var j = videos.length; i < j; i++) {
+            if (videos[i].id !== id) {
+                videos[i].pause();
+            }
+        }
+    }
+    var i = 0;
+    for (var j = videos.length; i < j; i++) {
+        videos[i].addEventListener("play", stopOthers, false);
+    }
+});
+
+
+
+
+
+            </script>
+
+</body>
+</html>
