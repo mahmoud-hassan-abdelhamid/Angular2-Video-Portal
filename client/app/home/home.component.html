@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row video-container">
+        <div  class='video-block col-lg-4 col-md-6 col-sm-12' *ngFor="let video of videos;  trackBy: videoOverallRating">
+            <video-rating [rating]='video.rating' [itemId]='video._id' (ratingClick)='ratingComponetClick($event)'></video-rating>
+            <video id="{{video._id}}" class="video"  controls>
+                <source src={{video.url}} type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="video-title">
+                <a [routerLink]="['/video', video._id]" title="{{video.name}}">
+                    {{video.name}}
+                </a>
+            </p>
+            <p class="video-desc">
+               {{ video.description | truncate: 100 : '...' }}
+            </p>           
+        </div>
+    </div>
+    <div class="row load-more">
+        <button (click)="loadMore()">Load More</button>
+    </div>
+    
+</div>

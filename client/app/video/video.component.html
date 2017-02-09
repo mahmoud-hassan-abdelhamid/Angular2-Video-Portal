@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row video-container">
+        <div class="col-lg-2 col-sm-1"></div>
+        <div  class='single-video col-lg-8 col-sm-10'>
+            <video-rating [rating]='video.rating' [itemId]='video._id' (ratingClick)='ratingComponetClick($event)'></video-rating>
+
+            <video id="{{video._id}}" controls>
+                <source src={{video.url}} type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="video-title">
+                {{video.name}}
+            </p>
+            <p class="video-desc">
+               {{ video.description }}
+            </p>
+            
+        </div>
+        <div class="col-lg-2 col-sm-1"></div>
+
+    </div>
+    
+</div>
+
+

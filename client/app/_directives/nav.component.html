@@ -1,0 +1,13 @@
+
+        <div class="container" *ngIf="user">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">                    
+                        <h3>Welcomeback {{user.username}}</h3>
+                    </div>
+                    <div class="panel-footer"> <p class="logout"><a [routerLink]="['/login']">Logout</a></p></div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div> 
+        </div>
